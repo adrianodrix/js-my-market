@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Market</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-header navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <img src="/images/logo.png" width="42" height="42" class="d-inline-block align-top" alt="My Market">
+      <a href="#" id="navbar-brand" class="navbar-brand">My Market</a>
+      <button class="btn btn-outline-success btn-lg my-2 my-sm-0" onclick="deleteList();" type="button">New List</button>
+    </nav>
+
+    <div class="container container-body">
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control form-control-lg mr-sm-2" type="text"  id="desc" placeholder="Description" aria-label="Description">
+        <input class="form-control form-control-lg mr-sm-2" type="number" id="amount" placeholder="Amount" aria-label="Amount">
+        <input class="form-control form-control-lg mr-sm-2" type="text" id="price" placeholder="Price" aria-label="Price">
+        <span id="btnUpdate" style="display: none;">
+          <span id="inputIDUpdate"></span>
+          <button class="btn btn-outline-success btn-lg my-2 my-sm-0" onclick="updateData();" type="button">Save</button>
+          <button class="btn btn-outline-danger btn-lg my-2 my-sm-0" onclick="resetForm();" type="button">Cancel</button>
+        </span>
+        <span id="btnAdd">
+          <button class="btn btn-outline-success btn-lg my-2 my-sm-0" onclick="addData();" type="button">Add</button>
+          <button class="btn btn-outline-warning btn-lg my-2 my-sm-0" onclick="resetForm();" type="button">Clear</button>
+        </span>
+      </form>
+
+      <span id="errors" class="alert alert-danger" style="display: none;"></span>
+
+      <div class="row row-list" id="list"></div>
+    </div>
+
+    <nav class="navbar navbar-default fixed-bottom navbar-dark bg-dark">
+      <div class="container">
+        <h4 class="text-center text-success">Total: <span id="total"></span></h4>
+      </div>
+    </nav>
+
+    <script type="text/javascript" src="js/config.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>

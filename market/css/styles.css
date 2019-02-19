@@ -1,0 +1,29 @@
+.card {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.row-list {
+  margin-top: 10px;
+}
+
+.navbar-header {
+  margin-bottom: 10px;
+}
+
+.container-body {
+  margin-top: 80px;
+}
+
+#amount {
+  width: 10em;
+}
+
+#price {
+  width: 10em;
+}
+
+#errors {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

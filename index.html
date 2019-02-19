@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Arrays</title>
+  </head>
+  <body>
+    <h1>Search</h1>
+    <div>
+      <input type="text" id="search" value="">
+      <button onclick="search();">Search</button>
+    </div>
+    <span id="result"></span>
+
+    <script type="text/javascript">
+      var arr = [];
+
+      arr.push("Não se desvie para os seus caminhos o teu coração, e não andes perdido nas suas veredas. Provérbios");
+      arr.push("O pensamento íntimo deles é que as suas casas são perpétuas e as suas habitações de geração em geração; dão às suas terras os seus próprios nomes. (Salmos 49:11)");
+      arr.push("O minha alma, espera somente em Deus, porque dele vem a minha esperança. (Salmos 62:5)");
+      arr.push("Humilhai-vos pois debaixo da potente mão de Deus, para que a seu tempo vos exalte.(I Pedro 5:6)");
+
+
+      function search() {
+        let value = document.getElementById('search').value;
+        let result = "<p>All registers</p>";
+        let testKey = null;
+
+        if (value != "") {
+          result = "<p>Found by " + value + "</p>";
+
+          for (let key in arr) {
+            let auxArr = arr[key].split(" ");
+            for (let key2 in auxArr) {
+              if (auxArr.indexOf(value) > -1) {
+                if (testKey != key) {
+                  testKey = key;
+                  result = result + "<p>" + arr[key] + "</p>";
+                }
+              }
+            }
+          }
+        } else {
+          arr.forEach(function(value, key) {
+            result = result + "<p>" + arr[key] + "</p>";
+          });
+        }
+
+        document.getElementById('result').innerHTML = result;
+      }
+
+    </script>
+  </body>
+</html>
